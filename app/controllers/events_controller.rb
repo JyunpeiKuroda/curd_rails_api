@@ -4,7 +4,6 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
-
     render json: @events
   end
 
@@ -40,12 +39,24 @@ class EventsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  def set_event
+    @event = Event.find(params[:id])
 
-    # Only allow a trusted parameter "white list" through.
-    def event_params
-      params.require(:event).permit(:title, :body)
-    end
+
+
+
+
+
+
+
+
+
+
+    
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def event_params
+    params.require(:event).permit(:title, :body)
+  end
 end

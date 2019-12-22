@@ -44,7 +44,6 @@ class CommentsController < ApplicationController
       @event = Event.where(id: params[:event_id]).first
       @comment = @event.comments.where(id: params[:id]).first
     end
-
     # Only allow a trusted parameter "white list" through.
     def comment_params
       params.require(:comment).permit(:event_id, :body)

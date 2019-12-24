@@ -52,3 +52,4 @@ production:
   database: rails_api_pjt_production
   username: rails_api_pjt
   password: <%= ENV['RAILS_API_PJT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

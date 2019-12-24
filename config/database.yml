@@ -49,7 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: rails_api_pjt_production
+  database: postgresql
+  encoding: unicode
   username: rails_api_pjt
   password: <%= ENV['RAILS_API_PJT_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>

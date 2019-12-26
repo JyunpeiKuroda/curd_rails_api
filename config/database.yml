@@ -12,6 +12,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -46,7 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_api_pjt_postgresql
-  username: rails_api_pjt
+  database: rails_api_pjt_production
+  username: rails_api_pjt_pgsql
   password: <%= ENV['RAILS_API_PJT_DATABASE_PASSWORD'] %>
-

@@ -5,15 +5,8 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
-# Use mysql2 as the database for Active Record
-group :test, :development do
-  gem 'mysql2', '>= 0.4.4'
-end
 # Use PostgreSQL for heroku (only production)
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

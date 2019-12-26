@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_12_22_030349) do
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.bigint "event_id", null: false
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_12_22_030349) do
     t.index ["event_id"], name: "index_comments_on_event_id"
   end
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
